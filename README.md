@@ -29,3 +29,38 @@
 
 ```bash
 gcc narch.c -o narch.exe -lws2_32
+```
+🚀 Usage
+  narch.exe <ip> [-t <threads>] [-p <min>-<max>] [--timeout <ms>] [--protocol <TCP|SYN|UDP>]
+Example
+  narch.exe 192.168.1.1 -t 4 -p 22-100 --timeout 300 --protocol SYN
+  
+🛠️ Scan Modes
+  Mode	Description
+  TCP	  Regular connect() scan
+  SYN	  Raw TCP SYN packet scan (requires admin)
+  UDP	  (Coming soon)
+
+📌 Current Challenges (Devlog)
+  - Raw sockets in Windows require admin and can silently fail
+  -  Windows firewalls often block or drop SYN scans
+  - Managing sockets + threads with _beginthreadex isn't fun
+  - Argument parsing could be cleaner
+  - TCP SYN behavior is inconsistent across Windows versions
+
+🧪 Roadmap
+ UDP scanning with ICMP fallback
+ Add CSV/JSON output
+ Auto-detect local IP correctly in all cases
+ Cross-check with Nmap results
+ Optional GUI (future)
+ 
+
+📚 Educational Value
+This project is a way to learn and explore:
+  TCP/IP stack at low level
+  Windows socket programming (Winsock2)
+  Raw sockets and packet crafting
+  Multithreading in C with the Windows API
+  Writing ethical hacking tools from scratch
+
