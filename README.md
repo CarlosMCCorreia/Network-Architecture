@@ -30,9 +30,9 @@
 ```bash
 gcc narch.c -o narch.exe -lws2_32
 ```
-🚀 Usage
+🚀 Usage 
   narch.exe <ip> [-t <threads>] [-p <min>-<max>] [--timeout <ms>] [--protocol <TCP|SYN|UDP>]
-Example
+Example 
   narch.exe 192.168.1.1 -t 4 -p 22-100 --timeout 300 --protocol SYN
   
 🛠️ Scan Modes
